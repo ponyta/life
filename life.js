@@ -18,6 +18,7 @@ var CELL_COLOR="#427df4";
 // 2d array containing cells
 // 0 is dead, 1 is alive
 var grid = initGrid();
+randomize();
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));

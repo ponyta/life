@@ -2,17 +2,56 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="theme.css">
+    <style>
+      body {
+        margin: 0;
+      }
+
+      #controls {
+        position: absolute;
+        bottom: 30px;
+        left: 50px;
+      }
+      button {
+        padding-top: 5px;
+        margin-right: 10px;
+      }
+
+      .text-btn {
+        position: relative;
+        bottom: 5px;
+      }
+
+      .label {
+        font-weight: bold;
+        line-height: 2.4em;
+      }
+    </style>
+    <script src="https://unpkg.com/feather-icons"></script>
   </head>
   <body>
-    <canvas id="canvas"></canvas>
-    <br />
-    <button onClick="startGame()">Start</button>
-    <button onClick="randomize()">Randomize</button>
-    <button onClick="cleanGame()">Clear</button>
-    <button onClick="glider()">Glider</button>
-    <button onClick="update()">Next</button>
-    <button onClick="stopGame()">Stop</button>
+    <canvas id="canvas">This requires HTML canvas to view.</canvas>
+    <div id="controls">
+      <button onClick="toggleRun()">
+        <i id="start-pause-icon" class="icon" data-feather="play"></i>
+      </button>
+      <button onClick="update()">
+        <i class="icon" data-feather="arrow-right"></i>
+      </button>
+      <button onClick="randomize()">
+        <i class="icon" data-feather="shuffle"></i>
+      </button>
+      <button onClick="cleanGame()">
+        <i class="icon" data-feather="trash"></i>
+      </button>
+      <button class='text-btn' onClick="glider()">
+        <span class="label">Glider</span>
+      </button>
+      <button class='text-btn' onClick="gun()">
+        <span class="label">Gun</span>
+      </button>
+    </div>
     <script src="life.js"></script>
+    <script>feather.replace()</script>
   </body>
 </html>
